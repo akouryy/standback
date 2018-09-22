@@ -36,3 +36,6 @@
 * `chr`: `a/^./`をその文字コードに置換
 * `+`: `na`を`na+nA`に置換
 * `/`: `na`を`na/nA`に置換 (-Infinityとかにも置換されうる)
+
+## 例
+[/examples/](examples)
