@@ -1,3 +1,5 @@
+require_relative 'lib'
+
 module Standback
   class Runner
     def initialize stmts, input
@@ -8,7 +10,7 @@ module Standback
     def run
       @a = @input.dup
       @A = "".dup
-      @fns = {}
+      @fns = Lib.dup
       @matches = []
 
       run_body @stmts
@@ -28,10 +30,16 @@ module Standback
       case s[0].downcase
       when :c
         f = @fns[s[1]]
-        raise "undefined function #{f.inspect}" unless f
         @matches, ms = [], @matches
         @a, @A = a1, a2
-        run_body f
+        case f
+        when Array
+          run_body f
+        when Proc
+          f.call @a, @A
+        else
+          raise "undefined function #{s[1].inspect}" unless f
+        end
         @matches = ms
         @a, @A = a2, a1 if up
       when :d
@@ -48,10 +56,10 @@ module Standback
           run_body s[3]
         end
       when :q
-        if a.empty?
+        if a1.empty?
           exit
         else
-          abort a
+          abort a1
         end
       when :s
         a1.sub!(s[1]){ replace s[2], Regexp.last_match }
