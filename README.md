@@ -2,6 +2,6 @@
 Esolang for TSG Hackathon 2018 Summer
 
 ## Spec
-At the moment, there is no English version.
+There is no English version at the moment.
 
 [日本語版](spec.ja.md)
