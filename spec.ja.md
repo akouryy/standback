@@ -1,5 +1,7 @@
 # (?i:standback) 仕様
 
+まずは[Rubyの正規表現](https://docs.ruby-lang.org/ja/latest/doc/spec=2fregexp.html)を見ましょう
+
 ## プログラムの構造(文法)
 * プログラム全体は1つのブロックである
 * ブロックは0個以上のコマンドの並びであり、コマンドの間や前後には空白を入れてもよい
