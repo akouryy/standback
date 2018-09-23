@@ -58,25 +58,26 @@ module Standback
         undo_c!
         return
       end
+      cmd_pos = i
       parse_slash
       cmd = cmd.to_sym
       case cmd.downcase
       when :c
-        [cmd, parse_string]
+        [cmd, parse_string, cmd_pos]
       when :d
-        [cmd, parse_string, parse_block]
+        [cmd, parse_string, parse_block, cmd_pos]
       when :g
-        [cmd, parse_regexp, parse_string]
+        [cmd, parse_regexp, parse_string, cmd_pos]
       when :m
-        [cmd, parse_regexp, parse_block, parse_block]
+        [cmd, parse_regexp, parse_block, parse_block, cmd_pos]
       when :q
-        [cmd]
+        [cmd, cmd_pos]
       when :s
-        [cmd, parse_regexp, parse_string]
+        [cmd, parse_regexp, parse_string, cmd_pos]
       when :t
-        [cmd, parse_string, parse_string]
+        [cmd, parse_string, parse_string, cmd_pos]
       when :w
-        [cmd, parse_regexp, parse_block]
+        [cmd, parse_regexp, parse_block, cmd_pos]
       else
         raise ParseError.new self, "unknown command #{c.inspect}"
       end

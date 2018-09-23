@@ -22,7 +22,7 @@ module Standback
     end
 
     private def run_cmd s
-      p [0, s, @a, @A] if $DEBUG
+      dbg :begin, s if $DEBUG
       up = s[0] =~ /^[A-Z]$/
       a1 = up ? @A : @a
       a2 = up ? @a : @A
@@ -73,7 +73,7 @@ module Standback
         end
       else
         raise "what is #{s.inspect}?"
-      end.tap{|x| p [1, s, @a, @A] if $DEBUG }
+      end.tap{|x| dbg 'end  ', s if $DEBUG }
     end
 
     private def replace str, match
@@ -103,6 +103,10 @@ module Standback
       end
       @matches.pop
       r
+    end
+
+    private def dbg status, s
+      $stderr.puts "#{status} #{s[0]}(#{s[-1]}): a1=#{@a.inspect} a2=#{@A.inspect}"
     end
 
     def self.run stmts, input
