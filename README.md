@@ -2,7 +2,9 @@
 Esolang for TSG Hackathon 2018 Summer
 
 ## Spec
-[日本語](spec.ja.md)
+There is no English version at the moment.
+
+[日本語版](spec.ja.md)
 
 ## Command Line Arguments
 `-d` enables debug mode.
