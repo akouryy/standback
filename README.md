@@ -7,7 +7,7 @@ There is no English version at the moment.
 [日本語版](spec.ja.md)
 
 ## Debug Mode
-Debug mode is turned on if:
+Debug mode is enabled if:
 * `-d` option is specified for ruby.
 * `-d` option is specified for standback.rb.
 * env variable `debug` or `DEBUG` exists.
