@@ -1,5 +1,7 @@
 # (?i:standback) 仕様
 
+[README.md](README.md)
+
 まずは[Rubyの正規表現](https://docs.ruby-lang.org/ja/latest/doc/spec=2fregexp.html)を見ましょう
 
 ## プログラムの構造(文法)
