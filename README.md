@@ -11,6 +11,7 @@ Debug mode is turned on if:
 * `-d` option is specified for ruby.
 * `-d` option is specified for standback.rb.
 * env variable `debug` or `DEBUG` exists.
+* the code has a line starting with `#@DEBUG`.
 
 Example output to stderr:
 ```
