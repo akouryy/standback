@@ -6,8 +6,13 @@ There is no English version at the moment.
 
 [日本語版](spec.ja.md)
 
-## Command Line Arguments
-`-d` enables debug mode.
+## Debug Mode
+Debug mode is turned on if:
+* `-d` option is specified for ruby.
+* `-d` option is specified for standback.rb.
+* env variable `debug` or `DEBUG` exists.
+
+Example output to stderr:
 ```
 begin m(1): a1="meow\n" a2=""
 begin S(11): a1="meow\n" a2=""
